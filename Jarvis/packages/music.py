@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import re
 from colorama import Fore
 
 
@@ -17,7 +18,7 @@ def play(data):
             os.system("instantmusic -s " + wanted)
             find = os.popen("ls -tc --hide='__*' --hide='*.py'")
             music = str(find.readline()).replace("\n", "")
-            os.system("XDG_CURRENT_DESKTOP= DESKTOP_SESSION= xdg-open " + music.replace(" ", "\ ").replace(" (", " \("). replace(")", "\)"))
+            os.system("XDG_CURRENT_DESKTOP= DESKTOP_SESSION= xdg-open " + re.escape(music))
 
         else:
-            os.system("XDG_CURRENT_DESKTOP= DESKTOP_SESSION= xdg-open " + music.replace(" ", "\ ").replace(" (", " \("). replace(")", "\)"))
+            os.system("XDG_CURRENT_DESKTOP= DESKTOP_SESSION= xdg-open " + re.escape(music))
