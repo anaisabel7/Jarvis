@@ -1,5 +1,6 @@
 import unittest
 import os
+<<<<<<< HEAD
 import re
 from mock import call, patch, mock_open
 from packages import music
