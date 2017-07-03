@@ -12,7 +12,7 @@ from utilities.GeneralUtilities import print_say
 from packages.music import play
 from packages.todo import todoHandler
 from packages.reminder import reminder_handler, reminder_quit
-from packages import mapps, picshow, evaluator, forecast
+from packages import mapps, picshow, evaluator, forecast, un
 from packages import chat, directions_to, near_me, weather_pinpoint, chuck, weatherIn, timeIn
 from packages.memory.memory import Memory
 from packages.shutdown import shutdown_system, cancel_shutdown, reboot_system
@@ -97,7 +97,7 @@ class CmdInterpreter(Cmd):
         return [i for i in self.actions if i.startswith(text)]
 
     def do_un(self, s):
-        pass
+        un.main(self, s)
 
     def help_un(self):
         print_say("Gives interesting facts from the United Nations database")
