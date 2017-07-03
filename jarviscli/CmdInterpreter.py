@@ -80,6 +80,7 @@ class CmdInterpreter(Cmd):
                         "todo",
                         {"tell": ("joke",)},
                         "umbrella",
+                        {"un": ("children",)},
                         {"update": ("location", "system")},
                         "weather",
                         )
@@ -94,6 +95,12 @@ class CmdInterpreter(Cmd):
     def completedefault(self, text, line, begidx, endidx):
         """Default completion"""
         return [i for i in self.actions if i.startswith(text)]
+
+    def do_un(self, s):
+        pass
+
+    def help_un(self):
+        print_say("Gives interesting facts from the United Nations database")
 
     def do_check(self, s):
         """Checks your system's RAM stats."""
